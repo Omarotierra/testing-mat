@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { MediaComponent } from './media.component';
 import { SizeService } from '../services/size.service';
 import { HoursService } from '../services/hours.service';
-import { MediaComponent } from './media.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 
@@ -67,4 +67,5 @@ describe('MediaComponent', () => {
     expect(component.hours).toEqual(mockData.data);
     expect(component.calculateMean(component.hours)).toEqual(60.32);
   })); 
+  
 });
