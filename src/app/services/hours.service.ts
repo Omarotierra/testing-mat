@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class HoursService {
 
-  apiURL = 'http://localhost:8080/hours';
+  apiURL = 'https://nodeapi-service-omarotierra.cloud.okteto.net/hours';
 
   constructor(private http: HttpClient) { }
 

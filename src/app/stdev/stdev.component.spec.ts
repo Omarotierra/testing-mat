@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { StdevComponent } from './stdev.component';
-
 import { SizeService } from '../services/size.service';
 import { HoursService } from '../services/hours.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';

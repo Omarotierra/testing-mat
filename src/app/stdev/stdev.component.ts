@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SizeService } from '../services/size.service';
 import { HoursService } from '../services/hours.service';
+import { MediaComponent } from '../media/media.component';
 
 @Component({
   selector: 'app-stdev',
@@ -34,44 +35,13 @@ export class StdevComponent implements OnInit{
     });
   }
 
-  calculateMean(data: number[]): number {
-    let media;
-    if (data.length === 0) {
-      return 0;
-    }
-
-    const sum = data.reduce((a, b) => a + b, 0);
-    media = sum / data.length;
-    media = Number(media.toFixed(2));
-    return media;
-  }
-
   calculateStandardDeviation(data: number[]): number {
-   /* if (data.length === 0) {
-      return 0;
-    }
-  
-    const mean = this.calculateMean(data);
-  
-    // Calcular la suma de las diferencias al cuadrado
-    const squaredDifferences = data.map(value => Math.pow(value - mean, 2));
-  
-    // Calcular la varianza como el promedio de las diferencias al cuadrado
-    const variance = squaredDifferences.reduce((acc, value) => acc + value, 0) / data.length;
-  
-    // Calcular la desviación estándar como la raíz cuadrada de la varianza
-    const standardDeviation = Math.sqrt(variance).toFixed(2);
-
-  
-    return parseFloat(standardDeviation);
-*/
     if (!data || data.length === 0) {
       return 0;
     }
   
     const num = data.length;
-    const sum = data.reduce((acc, value) => acc + value, 0);
-    const media = sum / num;
+    const media = MediaComponent.prototype.calculateMean(data);
   
     const sumDifferences = data.reduce((acc, value) => {
       const difference = value - media;
