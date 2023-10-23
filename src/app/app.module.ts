@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MediaComponent } from './media/media.component';
 import { StdevComponent } from './stdev/stdev.component';
 import { LinearRegressionComponent } from './linear-regression/linear-regression.component';
+import { CorrelationComponent } from './correlation/correlation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MediaComponent,
     StdevComponent,
-    LinearRegressionComponent
+    LinearRegressionComponent,
+    CorrelationComponent
   ],
   imports: [
     BrowserModule,

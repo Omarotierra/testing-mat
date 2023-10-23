@@ -62,4 +62,26 @@ export class Calculate {
 
         return media;
     }
+
+    calculateRR(r: number): number {
+        var rr = 0;
+
+        rr = r * r;
+
+        return rr;
+    }
+
+    calculateR(listaX: number[], listaY: number[]): number {
+        var r = 0;
+        var sumX = this.sumX(listaX);
+        var sumY = this.sumX(listaY);
+        var sumXX = this.sumXX(listaX);
+        var sumYY = this.sumXX(listaY);
+        var sumXY = this.sumXY(listaX, listaY);
+        var n = listaX.length;
+
+        r = ((n * sumXY) - (sumX * sumY)) / Math.sqrt(((n * sumXX) - (sumX * sumX)) * ((n * sumYY) - (sumY * sumY)));
+
+        return r;
+    }
 }

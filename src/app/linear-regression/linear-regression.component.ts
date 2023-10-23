@@ -12,7 +12,7 @@ export class LinearRegressionComponent implements OnInit {
 
   dataX: number[] = [];
   dataY: number[] = [];
-  selectedRouteNumber: number = 1; // Establecer en ruta 1 por defecto
+  selectedRouteNumber: number = 1;
 
   sumX = 0;
   sumY = 0;
