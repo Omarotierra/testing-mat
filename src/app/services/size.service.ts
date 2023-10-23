@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SizeService {
 
-  apiURL = 'http://localhost:8080/size';
+  apiURL = 'https://nodeapi-service-omarotierra.cloud.okteto.net/size';
 
   constructor(private http: HttpClient) { }
 
