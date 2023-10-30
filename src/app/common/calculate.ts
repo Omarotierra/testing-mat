@@ -85,29 +85,27 @@ export class Calculate {
         return r;
     }
 
-    simpson(x0: number, x1: number, num_seg: number, error: number, f: (x: number) => number): number {
-        // This is your Simpson's Rule integration function
-        let integral = 0;
-        let integralPrev = 0;
+    simpson(x0: number, x1: number, num_segmento: number, error: number, f: (x: number) => number): number {
+        let inte = 0;
+        let integralAnte = 0;
 
         do {
-            integralPrev = integral;
-            let h = (x1 - x0) / num_seg;
+            integralAnte = inte;
+            let h = (x1 - x0) / num_segmento;
             let sum = f(x0) + f(x1);
 
-            for (let i = 1; i < num_seg; i++) {
+            for (let i = 1; i < num_segmento; i++) {
                 const x = x0 + i * h;
                 sum += i % 2 === 0 ? 2 * f(x) : 4 * f(x);
             }
 
-            integral = (h / 3) * sum;
-        } while (Math.abs(integral - integralPrev) > error);
+            inte = (h / 3) * sum;
+        } while (Math.abs(inte - integralAnte) > error);
 
-        console.log(`p=${integral}`);
-        return integral;
+        console.log(`p=${inte}`);
+        return inte;
     }
 
-    // Additional functions you mentioned
     '2x'(x: number): number {
         return 2 * x;
     }
@@ -121,8 +119,7 @@ export class Calculate {
     }
 
     t(x: number): number {
-        // Define your 't' function here
-        // Example: return Math.sin(x) + Math.cos(x);
-        return 0; // Replace with your actual function
+    return Math.sin(x) + Math.cos(x);
+        return 0; 
     }
 }
