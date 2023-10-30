@@ -15,7 +15,6 @@ describe('CustomLinearRegressionComponent', () => {
       imports: [HttpClientModule],
     });
 
-    // Crea una instancia del componente y del servicio antes de cada prueba
     component = TestBed.createComponent(LinearRegressionComponent).componentInstance;
     service = TestBed.inject(LinearRegressionService);
   });

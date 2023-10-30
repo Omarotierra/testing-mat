@@ -84,4 +84,42 @@ export class Calculate {
 
         return r;
     }
+
+    simpson(x0: number, x1: number, num_segmento: number, error: number, f: (x: number) => number): number {
+        let inte = 0;
+        let integralAnte = 0;
+
+        do {
+            integralAnte = inte;
+            let h = (x1 - x0) / num_segmento;
+            let sum = f(x0) + f(x1);
+
+            for (let i = 1; i < num_segmento; i++) {
+                const x = x0 + i * h;
+                sum += i % 2 === 0 ? 2 * f(x) : 4 * f(x);
+            }
+
+            inte = (h / 3) * sum;
+        } while (Math.abs(inte - integralAnte) > error);
+
+        console.log(`p=${inte}`);
+        return inte;
+    }
+
+    '2x'(x: number): number {
+        return 2 * x;
+    }
+
+    'x2'(x: number): number {
+        return x * x;
+    }
+
+    '1_x'(x: number): number {
+        return 1 / x;
+    }
+
+    t(x: number): number {
+    return Math.sin(x) + Math.cos(x);
+        return 0; 
+    }
 }
