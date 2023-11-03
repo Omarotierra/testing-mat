@@ -20,4 +20,5 @@ export class SimpsonComponent {
     return this.calculator.gamma(x);
   }
 
+
 }

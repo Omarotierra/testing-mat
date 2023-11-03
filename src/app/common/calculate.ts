@@ -204,5 +204,4 @@ export class Calculate {
       return tDistribution;
     }
   
-
 }

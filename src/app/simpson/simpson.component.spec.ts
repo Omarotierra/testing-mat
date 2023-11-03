@@ -97,3 +97,4 @@ describe('SimpsonComponent', () => {
     expect(integralResult).toBeCloseTo(expectedValue, 8); // Use 8 decimal places for comparison
   });
 });
+
