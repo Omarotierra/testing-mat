@@ -1,0 +1,42 @@
+.my-button {
+    padding: 10px 20px;
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.47);
+  }
+  
+  .my-button:hover {
+    background-color: #0300b2;
+  }
+  
+  .my-button:active {
+    background-color: #0097B2;
+  }
+
+  .my-input{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.47);
+  }
+
+ /*Tamaño en px*/
+h1{font-size: 32px;}
+
+/*Tamaño en ems*/
+h2{font-size: 2em;}
+
+p.cua {font-size: 20px;
+}
+
+label.cua{font-size: 20px;
+}
+
+/*Ambios producirán el mismo tamaño de letra*/
+
+
+  

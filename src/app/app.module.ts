@@ -1,30 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MediaComponent } from './media/media.component';
-import { StdevComponent } from './stdev/stdev.component';
-import { LinearRegressionComponent } from './linear-regression/linear-regression.component';
-import { CorrelationComponent } from './correlation/correlation.component';
-import { SimpsonComponent } from './simpson/simpson.component';
-import { TComponent } from './t/t.component';
+import { MenuComponent } from './menu/menu.component';
+import { A1Component } from './a1/a1.component';
+import { A2Component } from './a2/a2.component';
+import { A3Component } from './a3/a3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MediaComponent,
-    StdevComponent,
-    LinearRegressionComponent,
-    CorrelationComponent,
-    SimpsonComponent,
-    TComponent
+    MenuComponent,
+    A1Component,
+    A2Component,
+    A3Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

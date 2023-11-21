@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Estadísticas</title>
+    <link rel="stylesheet" href="menu.component.css">
+</head>
+<body>
+
+    <!-- menu.component.html -->
+
+<h1>Menú de Estadísticas</h1>
+
+<div id="menu">
+  <a routerLink="/a1">Media y Desviación Estándar</a>
+  <a routerLink="/a2">Regresión Lineal y Correlación</a>
+  <a routerLink="/a3">Simpson y T</a>
+</div>
+
+<div id="contenido">
+  <router-outlet></router-outlet>
+</div>
+
+</body>
+</html>

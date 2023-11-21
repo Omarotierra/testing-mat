@@ -1,0 +1,38 @@
+.my-button {
+  margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.47);
+  }
+  
+  .my-button:hover {
+    background-color: #0300b2;
+  }
+  
+  .my-button:active {
+    background-color: #0097B2;
+  }
+  .my-button:disabled {
+    background-color: #b7b7b7; /* Cambia el color cuando el botón está deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor cuando el botón está deshabilitado */
+    color: #808080; /* Cambia el color del texto cuando el botón está deshabilitado */
+  }
+
+  .my-input{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.47);
+  }
+
+  p.cua {font-size: 22px;
+}
+
+label.cua{font-size: 15px;
+}
+  

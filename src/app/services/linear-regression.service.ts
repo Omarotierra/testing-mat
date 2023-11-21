@@ -25,7 +25,6 @@ export class LinearRegressionService {
     return this.http.get<any>(this.test1, this.httpOptions)
     .pipe(
       retry(1),
-      catchError(this.handleError)
     )
   }
 
@@ -33,7 +32,6 @@ export class LinearRegressionService {
     return this.http.get<any>(this.test2, this.httpOptions)
     .pipe(
       retry(1),
-      catchError(this.handleError)
     )
   }
 
@@ -41,7 +39,6 @@ export class LinearRegressionService {
     return this.http.get<any>(this.test3, this.httpOptions)
     .pipe(
       retry(1),
-      catchError(this.handleError)
     )
   }
 
@@ -49,20 +46,6 @@ export class LinearRegressionService {
     return this.http.get<any>(this.test4, this.httpOptions)
     .pipe(
       retry(1),
-      catchError(this.handleError)
     )
-  }
-
-  handleError (error: any) {
-    let errorMessage = '';
-
-    if(error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
-    } else {
-      errorMessage = 'Error code: ${error.status}\n Message: ${error.message}';
-    }
-
-    window.alert(errorMessage);
-    return throwError(errorMessage);
   }
 }

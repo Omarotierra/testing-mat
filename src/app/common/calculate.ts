@@ -119,27 +119,6 @@ export class Calculate {
     return inte;
   }
 
-  /*gamma(x: number) {
-        if (Number.isInteger(x)) {
-          let result = 1;
-          while (x > 1) {
-            result *= x - 1;
-            x--;
-          }
-          return result;
-        } else if (x === 0.5) {
-          return Math.PI;
-        } else if (x === 1) {
-          return 1;
-        } else {
-          let result = 1;
-          while (x > 1) {
-            result *= x;
-            x--;
-          }
-          return result;
-        }
-      }*/
 
   gamma(x: number): number {
     if (Number.isInteger(x)) {
@@ -151,9 +130,7 @@ export class Calculate {
       return result;
     } else {
       if (x <= 0) {
-        throw new Error(
-          'La función gamma no está definida para números no positivos.'
-        );
+        throw new Error("La función gamma no está definida para números no positivos.");
       } else if (x === 0.5) {
         return Math.sqrt(Math.PI);
       } else {

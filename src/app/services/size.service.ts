@@ -23,21 +23,6 @@ export class SizeService {
     return this.http.get<any>(this.apiURL, this.httpOptions)
       .pipe(
         retry(1),
-        catchError(this.handleError)
       )
-  }
-
-  handleError(error: any) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
-    }
-    else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
   }
 }
