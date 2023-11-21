@@ -33,3 +33,4 @@ spec:
   selector:
     app: {MODEL_NAME}-server
   type: LoadBalancer
+  
