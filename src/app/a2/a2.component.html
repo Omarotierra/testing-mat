@@ -1,0 +1,88 @@
+<div>
+  <h2>Operaciones</h2>
+
+  <div style="display: flex; justify-content: space-around">
+    <button class="my-button" (click)="updateData(1)">Test 1</button>
+    <button class="my-button" (click)="updateData(2)">Test 2</button>
+    <button class="my-button" (click)="updateData(3)">Test 3</button>
+    <button class="my-button" (click)="updateData(4)">Test 4</button>
+  </div>
+
+  <div style="display: flex; justify-content: space-around; margin-top: 20px">
+    <div>
+      <label class="cua" for="numberInput">Número:</label>
+      <input
+        class="my-input"
+        id="newNumber1"
+        [(ngModel)]="newNumber1"
+        type="number"
+        name="newNumber1"
+        placeholder="0.0"
+      />
+      <button
+        class="my-button"
+        style="margin-left: 20px"
+        (click)="addNumber1()"
+      >
+        +
+      </button>
+      <h3>Array 1:</h3>
+      <ul>
+        <li *ngFor="let num of data1">{{ num }}</li>
+      </ul>
+    </div>
+    <div>
+      <label class="cua" for="numberInput">Número:</label>
+      <input
+        class="my-input"
+        id="newNumber2"
+        [(ngModel)]="newNumber2"
+        type="number"
+        name="newNumber2"
+        placeholder="0.0"
+      />
+      <button
+        class="my-button"
+        style="margin-left: 20px"
+        (click)="addNumber2()"
+      >
+        +
+      </button>
+      <h3>Array 2:</h3>
+      <ul>
+        <li *ngFor="let num of data2">{{ num }}</li>
+      </ul>
+    </div>
+    <div>
+      <label class="cua" for="numberInput">x:</label>
+      <input class="my-input" id="x" [(ngModel)]="x" type="number" name="x" placeholder="0.0" />
+    </div>
+  </div>
+
+  <div>
+    <button
+      class="my-button"
+      (click)="
+        calculateR(); calculateRR(); calculateB0(); calculateB1(); calculateY(x)
+      "
+    >
+      Calcular
+    </button>
+  </div>
+
+  <div class="" *ngIf="r !== undefined">
+    <p class="cua">R: {{ r }}</p>
+  </div>
+  <div *ngIf="rr !== undefined">
+    <p class="cua">RR: {{ rr }}</p>
+  </div>
+  <div *ngIf="b0 !== undefined">
+    <p class="cua">b0: {{ b0 }}</p>
+  </div>
+  <div *ngIf="b1 !== undefined">
+    <p class="cua">b1: {{ b1 }}</p>
+  </div>
+  <div *ngIf="y !== undefined">
+    <p class="cua">y: {{ y }}</p>
+  </div>
+</div>

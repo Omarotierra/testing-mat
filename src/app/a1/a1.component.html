@@ -1,0 +1,47 @@
+<div>
+    <h2 style="display: flex; justify-content: flex-start; margin-left: 20px;">Operaciones</h2>
+    <label class="cua" style="display: flex; justify-content: flex-start; margin-left: 20px;" for="numberInput">Ingresa un número:</label>
+    <div style="display: flex; justify-content: flex-start; margin-left: 20px;">
+      <input class="my-input" id="newNumber" [(ngModel)]="newNumber" type="number" name="newNumber" placeholder="0.0">
+      <button class="my-button" style="margin-left: 20px;" (click)="addNumber()">+</button>
+      <button class="my-button" style="margin-left: 20px;" (click)="fillArray('hours')">Llenar con horas</button>
+      <button class="my-button" style="margin-left: 20px;" (click)="fillArray('sizes')">Llenar con tamaños</button>
+    </div>
+    <h3 style="display: flex; justify-content: flex-start; margin-left: 20px;">Números en el array:</h3>
+    <div *ngIf="number.length > 0">
+      <ul>
+        <li *ngFor="let num of number">{{ num }}</li>
+      </ul>
+    </div>
+  
+    <div style="display: flex; justify-content: flex-start;">
+      <div>
+        <ul>
+          <button class="my-button" (click)="calculateMean(number)">Calcular Media</button>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <div *ngIf="media !== undefined">
+            <p class="cua">Media: {{ media }}</p>
+          </div>
+        </ul>
+      </div>
+    </div>
+  
+    <div style="display: flex; justify-content: flex-start;">
+      <div>
+        <ul>
+          <button class="my-button" (click)="calculateStandardDeviation(number)">Calcular Desviación Estándar</button>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <div *ngIf="result !== undefined">
+            <p class="cua">Desviación estándar: {{ result }}</p>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
