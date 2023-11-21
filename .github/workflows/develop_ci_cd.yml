@@ -26,7 +26,7 @@ jobs:
           
       - name: download, run httpd image, container name serving_base
         run: |
-          docker run -d --name calculator httpd
+          docker run -d --name testing httpd
           
       - name: Copy React build to container
         run: |
