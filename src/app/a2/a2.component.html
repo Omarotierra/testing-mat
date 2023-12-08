@@ -1,11 +1,12 @@
+<app-menu></app-menu>
 <div>
   <h2>Operaciones</h2>
 
   <div style="display: flex; justify-content: space-around">
-    <button class="my-button" (click)="updateData(1)">Test 1</button>
-    <button class="my-button" (click)="updateData(2)">Test 2</button>
-    <button class="my-button" (click)="updateData(3)">Test 3</button>
-    <button class="my-button" (click)="updateData(4)">Test 4</button>
+    <button data-test="btn-test1" class="my-button" (click)="updateData(1)">Test 1</button>
+    <button data-test="btn-test2" class="my-button" (click)="updateData(2)">Test 2</button>
+    <button data-test="btn-test3" class="my-button" (click)="updateData(3)">Test 3</button>
+    <button data-test="btn-test4" class="my-button" (click)="updateData(4)">Test 4</button>
   </div>
 
   <div style="display: flex; justify-content: space-around; margin-top: 20px">
@@ -20,6 +21,8 @@
         placeholder="0.0"
       />
       <button
+      data-test="btn-add1"
+        id="add1"
         class="my-button"
         style="margin-left: 20px"
         (click)="addNumber1()"
@@ -27,7 +30,7 @@
         +
       </button>
       <h3>Array 1:</h3>
-      <ul>
+      <ul data-test="ul1">
         <li *ngFor="let num of data1">{{ num }}</li>
       </ul>
     </div>
@@ -42,25 +45,28 @@
         placeholder="0.0"
       />
       <button
+      id="add2"
         class="my-button"
         style="margin-left: 20px"
         (click)="addNumber2()"
+        data-test="btn-add2"
       >
         +
       </button>
       <h3>Array 2:</h3>
-      <ul>
+      <ul data-test="ul2">
         <li *ngFor="let num of data2">{{ num }}</li>
       </ul>
     </div>
     <div>
       <label class="cua" for="numberInput">x:</label>
-      <input class="my-input" id="x" [(ngModel)]="x" type="number" name="x" placeholder="0.0" />
+      <input data-test="input-x" class="my-input" id="x" [(ngModel)]="x" type="number" name="x" placeholder="0.0" />
     </div>
-  </div>
+  </div> 
 
   <div>
     <button
+      data-test="btn-result"
       class="my-button"
       (click)="
         calculateR(); calculateRR(); calculateB0(); calculateB1(); calculateY(x)
@@ -71,18 +77,18 @@
   </div>
 
   <div class="" *ngIf="r !== undefined">
-    <p class="cua">R: {{ r }}</p>
+    <p data-test="result-r" class="cua">R: {{ r }}</p>
   </div>
   <div *ngIf="rr !== undefined">
-    <p class="cua">RR: {{ rr }}</p>
+    <p data-test="result-rr" class="cua">RR: {{ rr }}</p>
   </div>
   <div *ngIf="b0 !== undefined">
-    <p class="cua">b0: {{ b0 }}</p>
+    <p data-test="result-b0" class="cua">b0: {{ b0 }}</p>
   </div>
   <div *ngIf="b1 !== undefined">
-    <p class="cua">b1: {{ b1 }}</p>
+    <p data-test="result-b1" class="cua">b1: {{ b1 }}</p>
   </div>
   <div *ngIf="y !== undefined">
-    <p class="cua">y: {{ y }}</p>
+    <p data-test="result-y" class="cua">y: {{ y }}</p>
   </div>
 </div>

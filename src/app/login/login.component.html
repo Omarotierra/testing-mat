@@ -1,0 +1,74 @@
+<body>
+  <div class="container">
+  <!--  <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="bubble b5"></div>
+    <div class="bubble b6"></div>
+    <div class="bubble b7"></div>-->
+    <div class="row justify-content-center pt-5">
+      <div class="col-sm-6 p-3 rounded shadow">
+        <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+          <div class="icono-circular">
+            <img src="https://firebasestorage.googleapis.com/v0/b/mycv-omar.appspot.com/o/%E5%AD%A6%E3%81%B6.png?alt=media&token=b9614846-60d7-438d-a895-3fe1653cfcbb" alt="Icono">
+          </div>
+          <h1 id="loginFormTitle">Inicio de Sesión</h1>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              class="form-control my-input"
+              id="loginFormEmailInput"
+              name="email"
+              required
+              pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              #email="ngModel"
+              ngModel
+            />
+            <div *ngIf="!email.valid && email.touched">
+              <p>Enter valid Email</p>
+            </div>
+          </div>
+          <div class="forms-group mt-2">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="loginFormPasswordInput"
+              name="password"
+              class="form-control my-input"
+              required
+              #password="ngModel"
+              minlength="5"
+              ngModel
+            />
+           <!-- <div *ngIf="!password.valid && password.touched">
+              <p>Please enter valid Password!</p>
+              <p>Password shold be minimum 5 character</p>
+            </div>
+             -->
+          </div>
+          <button
+            type="submit"
+            id="loginFormSubmitButton"
+            class="my-button btn btn-primary col-sm-4 mt-3"
+            [disabled]="!myForm.valid"
+          >
+            Submit
+          </button>
+          <div *ngIf="errorMessage" class="mt-3">
+            <p class="text-danger error-message">{{ errorMessage }}</p>
+          </div>
+          <div class="row">
+            <div class="col-sm-5" *ngIf="isSubmitted">
+              <p id="loginFormEmailInputValue">Email: {{ email.value }}</p>
+              <p id="loginFormPasswordInputValue">
+                Password: {{ password.value }}
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

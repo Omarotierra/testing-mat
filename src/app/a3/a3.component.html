@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div>
     <h2>Operaciones</h2>
 
@@ -5,19 +6,19 @@
         <div>
             <label class="cua" for="x0">x0:</label>
             <div>
-                <input class="my-input" [(ngModel)]="x0" type="number" name="x0" placeholder="0.0" />
+                <input id="x0" class="my-input" [(ngModel)]="x0" type="number" name="x0" placeholder="0.0" />
             </div>
         </div>
         <div>
             <label class="cua" for="x1">x1:</label>
             <div>
-                <input class="my-input" [(ngModel)]="x1" type="number" name="x1" placeholder="0.0" /> 
+                <input id="x1" class="my-input" [(ngModel)]="x1" type="number" name="x1" placeholder="0.0" /> 
             </div>
         </div>
         <div>
             <label class="cua" for="dof">Grados de libertaf:</label>
             <div>
-                <input class="my-input" [(ngModel)]="dof" type="number" name="dof" placeholder="0" />
+                <input id="dof" class="my-input" [(ngModel)]="dof" type="number" name="dof" placeholder="0" />
             </div>
         </div>
       </div>
@@ -26,32 +27,32 @@
         <div>
             <label for="numSegmento">Número de segmentos:</label>
             <div>
-                <input class="my-input" [(ngModel)]="numSegmento" type="number" name="numSegmento" placeholder="0" />
+                <input id="numSegmento" class="my-input" [(ngModel)]="numSegmento" type="number" name="numSegmento" placeholder="0" />
             </div>
         </div>
         <div style="margin-left: 210px;">
             <label class="cua" for="error">Error:</label>
             <div>
-                <input class="my-input" [(ngModel)]="error" type="number" name="error" placeholder="0.0001" />
+                <input id="error" class="my-input" [(ngModel)]="error" type="number" name="error" placeholder="0.0001" />
             </div>
         </div>
       </div>
 
       <div>
-        <button class="my-button" (click)="simpson(x0, x1, numSegmento, error, calculateCuadrado)" [disabled]="dof > 0">Calcular Cuadrado</button>
+        <button data-test="btn-square" class="my-button" (click)="simpson(x0, x1, numSegmento, error, calculateCuadrado)" [disabled]="dof > 0">Calcular Cuadrado</button>
       </div>
       <div>
-        <button class="my-button" (click)="simpson(x0, x1, numSegmento, error, calculateTriangulo)" [disabled]="dof > 0">Calcular Triangulo</button>
+        <button data-test="btn-triangule" class="my-button" (click)="simpson(x0, x1, numSegmento, error, calculateTriangulo)" [disabled]="dof > 0">Calcular Triangulo</button>
       </div>
     <div>
-      <button class="my-button" (click)="simpson(x0, x1, numSegmento, error, calculateInverse)" [disabled]="dof > 0">Calcular Irregular</button>
+      <button data-test="btn-irregular" class="my-button" (click)="simpson(x0, x1, numSegmento, error, calculateInverse)" [disabled]="dof > 0">Calcular Irregular</button>
     </div>
     <div>
-        <button class="my-button" (click)="simpson(x0, x1, numSegmento, error, getTWithDof(dof))" [disabled]="dof <= 0">Calcular T</button>
+        <button data-test="btn-t" class="my-button" (click)="simpson(x0, x1, numSegmento, error, getTWithDof(dof))" [disabled]="dof <= 0">Calcular T</button>
       </div>
   
     <div *ngIf="result !== undefined">
-      <p>Resultado: {{ result }}</p>
+      <p data-test="result">Resultado: {{ result }}</p>
     </div>
   </div>
   
